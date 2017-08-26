@@ -45,15 +45,17 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                 <configuration>
-      				<mainClass>${start-class}</mainClass>
 <!-- To build 2 war:
 		- a war without provided lib. To be used within a J2EE container
 		- a war with all provided lib. To be used as a standalone war. 
 		  War name is prefixed by "exec"
  -->
+ <!--  
+                 <configuration>
+      				<mainClass>${start-class}</mainClass>
       				<classifier>exec</classifier>
  				</configuration>
+ -->
             </plugin>
         </plugins>
         <resources>

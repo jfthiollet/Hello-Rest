@@ -6,7 +6,7 @@
     <groupId>org.springframework</groupId>
     <artifactId>HelloRest</artifactId>
     <version>0.1.0</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -34,14 +34,38 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+	</dependencies>
+	
+<!-- for war
+       <dependencies> 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+           <exclusions>
+           <exclusion>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-starter-tomcat</artifactId>
+           </exclusion>
+        </exclusions>
+		</dependency>
+		<dependency>
+ 		   <groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-tomcat</artifactId>
+    		<scope>provided</scope>
+		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
-      
+ -->     
      <properties>
         <java.version>1.8</java.version>
     </properties>
 
     <build>
-    	<finalName>hello</finalName>
+<!--    	<finalName>hello</finalName> -->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -62,9 +86,6 @@
         <resources>
 	    	<resource>
 				<directory>src/main/resources</directory>
-	    	</resource>
-	    	<resource>
-				<directory>src/main/webapp</directory>
 	    	</resource>
 	    	<resource>
 				<directory>src/main/webapp</directory>

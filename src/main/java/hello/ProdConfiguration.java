@@ -9,7 +9,8 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
 @Profile("prod")
-@PropertySource("file:///${JAVA_DATA_DIR}/application.properties")
+// @PropertySource("file:///${JAVA_DATA_DIR}/application.properties")
+@PropertySource("file:///deployments/data/application.properties")
 @EntityScan(basePackages="hello")
 public class ProdConfiguration {
 	

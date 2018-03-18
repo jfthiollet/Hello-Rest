@@ -11,9 +11,10 @@ import org.springframework.stereotype.Component;
 @Profile("prod")
 
 // @PropertySource("file:///${JAVA_DATA_DIR}/application.properties")
-// @PropertySource("file:///deployments/data/application.properties")
+// @PropertySource("file:///home/jft/Documents/application.properties")
+@PropertySource("file:///deployments/data/application.properties")
 
-@PropertySource("file:///home/jft/Documents/application.properties")
+
 @Component
 public class ProdConfiguration implements IConfiguration  {
 

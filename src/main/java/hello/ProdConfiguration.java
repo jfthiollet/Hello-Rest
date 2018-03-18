@@ -1,23 +1,30 @@
 package hello;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.Value;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.stereotype.Component;
 
-@Configuration
+// @Configuration
 @Profile("prod")
-// @PropertySource("file:///${JAVA_DATA_DIR}/application.properties")
-@PropertySource("file:///deployments/data/application.properties")
-@EntityScan(basePackages="hello")
-public class ProdConfiguration {
-	
-	@Bean
-	   public static PropertySourcesPlaceholderConfigurer
-	     propertySourcesPlaceholderConfigurer() {
-	      return new PropertySourcesPlaceholderConfigurer();
-	   }
 
+// @PropertySource("file:///${JAVA_DATA_DIR}/application.properties")
+// @PropertySource("file:///deployments/data/application.properties")
+
+@PropertySource("file:///home/jft/Documents/application.properties")
+@Component
+public class ProdConfiguration implements IConfiguration  {
+
+	@Value("${greeting.msg1}")
+	private String hello;
+	
+	public ProdConfiguration() {
+	}
+
+	@Override
+	public String getHello() {
+		return hello;
+	}
 }

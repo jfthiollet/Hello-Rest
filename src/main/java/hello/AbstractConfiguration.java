@@ -8,6 +8,6 @@ public abstract class AbstractConfiguration {
 	private String hello;
 
 	public String getHello() {
-		return "hello";
+		return hello;
 	}
 }

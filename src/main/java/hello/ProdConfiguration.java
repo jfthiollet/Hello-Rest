@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 
 @Profile("prod")
 
-// @PropertySource("file:///${JAVA_DATA_DIR}/application.properties")
-@PropertySource("file:///deployments/data/application.properties")
+@PropertySource("file:///${JAVA_DATA_DIR}/application.properties")
+// @PropertySource("file:///deployments/data/application.properties")
 
 
 @Component
